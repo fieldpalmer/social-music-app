@@ -33,8 +33,8 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="md:flex hidden flex-col w-[240px] py-10 px-4 bg-[#191624]">
-        <img src={logo} alt="logo" className="w-full h-14 object-contain" />
+      <div className="md:flex hidden flex-col w-[240px] py-10 px-4 bg-[#000A00]">
+        <img src={logo} alt="logo" className="w-full h-25 object-contain" />
         <NavLinks />
       </div>
 

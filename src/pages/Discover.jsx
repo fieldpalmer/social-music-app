@@ -33,24 +33,24 @@ const Discover = () => {
 
       <div className="flex flex-wrap sm:justify-start justify-center gap-8">
         {data?.map((song, i) => (
-          <SongBar
-            key={song.key}
-            song={song}
-            i={i}
-            artistId={song.artistId}
-            isPlaying={isPlaying}
-            activeSong={activeSong}
-            handlePauseClick={song.handlePauseClick}
-            handlePlayClick={song.handlePlayClick}
-          />
-          // <SongCard
+          // <SongBar
           //   key={song.key}
           //   song={song}
+          //   i={i}
+          //   artistId={song.artistId}
           //   isPlaying={isPlaying}
           //   activeSong={activeSong}
-          //   data={data}
-          //   i={i}
+          //   handlePauseClick={song.handlePauseClick}
+          //   handlePlayClick={song.handlePlayClick}
           // />
+          <SongCard
+            key={song.key}
+            song={song}
+            isPlaying={isPlaying}
+            activeSong={activeSong}
+            data={data}
+            i={i}
+          />
         ))}
       </div>
     </div>

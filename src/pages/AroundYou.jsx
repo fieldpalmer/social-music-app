@@ -20,33 +20,21 @@ const CountryTracks = () => {
   }, [country]);
 
   if (isFetching && loading) return <Loader title="Loading Songs around you..." />;
-
   if (error && country !== '') return <Error />;
 
   return (
     <div className="flex flex-col">
       <h2 className="font-bold text-3xl text-white text-left mt-4 mb-10">Around you <span className="font-black">{country}</span></h2>
-
       <div className="flex flex-wrap sm:justify-start justify-center gap-8">
         {data?.map((song, i) => (
-          <SongBar
+          <SongCard
             key={song.key}
             song={song}
-            i={i}
-            artistId={song.artistId}
             isPlaying={isPlaying}
             activeSong={activeSong}
-            handlePauseClick={song.handlePauseClick}
-            handlePlayClick={song.handlePlayClick}
+            data={data}
+            i={i}
           />
-          // <SongCard
-          //   key={song.key}
-          //   song={song}
-          //   isPlaying={isPlaying}
-          //   activeSong={activeSong}
-          //   data={data}
-          //   i={i}
-          // />
         ))}
       </div>
     </div>
